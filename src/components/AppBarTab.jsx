@@ -2,10 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-native';
 import Text from './Text';
 
-const AppBarTab = ({ text, path }) => {
+const AppBarTab = ({ style, text, path }) => {
   return (
     <Link to={path}>
-      <Text color="tabText" fontWeight="bold">{text}</Text>
+      <Text style={style} color="tabText" fontWeight="bold">{text}</Text>
     </Link>
   );
 };

@@ -14,9 +14,8 @@ const styles = StyleSheet.create({
     // alignItems: 'flex-end'
   },
   tab: {
-    marginLeft: 20, //ei toimi...
-    paddingLeft: 20,
-
+    marginVertical: 5,
+    marginHorizontal: 10
   },
   title: {
     color: '#fffff',
