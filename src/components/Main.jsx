@@ -5,7 +5,7 @@ import { Route, Routes, Navigate } from 'react-router-native'
 import AppBar from './AppBar';
 import RepositoryList from './RepositoryList';
 import theme from '../theme';
-import SignIn from './SignIn';
+import SigninForm from './SignIn';
 
 const styles = StyleSheet.create({
   container: {
@@ -21,7 +21,7 @@ const Main = () => {
       <Pressable onPress={() => console.log('pressed..')}><AppBar /></Pressable>
       <Routes>
         <Route path="/" element={<RepositoryList />} exact />
-        <Route path="/Signin" element={<SignIn />} exact />
+        <Route path="/signin" element={<SigninForm />} exact />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </View>
