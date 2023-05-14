@@ -18,8 +18,6 @@ const FormikTextInput = ({ name, style, ...props }) => {
   const [field, meta, helpers] = useField(name);
   const showError = meta.touched && meta.error;
 
-  console.log("FTI, hello")
-
   return (
     <>
       <TextInput
