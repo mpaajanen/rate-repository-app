@@ -2,6 +2,8 @@ import React from 'react';
 import { Image, View, StyleSheet, Pressable } from 'react-native';
 import Text from './Text';
 import { useNavigate } from 'react-router-native';
+import theme from '../theme';
+import * as Linking from 'expo-linking'
 
 const styles = StyleSheet.create({
   card: {
@@ -28,6 +30,14 @@ const styles = StyleSheet.create({
   stats: {
     justifyContent: 'center',
   },
+  button: {
+    borderRadius: 5,
+    padding: 10,
+    margin: 10,
+    alignItems: 'center',
+    color: '#ffffff',
+    backgroundColor: theme.colors.primary
+  }
 })
 
 const countFormatter = count => {
@@ -69,6 +79,12 @@ const RepositoryItem = ({item}) => {
             <Text style={{textAlign: 'center'}}>Rating</Text>
           </View>
         </View>
+        {item.url ? (
+          <Pressable style={styles.button} onPress={() => {Linking.openURL(item.url)}}>
+            <Text tag>Open in GitHub</Text>
+          </Pressable>) 
+          : null
+        }
       </View>
     </Pressable>
   );
