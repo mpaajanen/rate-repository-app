@@ -22,3 +22,17 @@ export const REVIEW = gql`
     }
   }
 `
+
+export const SIGNUP = gql`
+  mutation signup($username: String!, $password: String!) {
+    createUser (
+      user: {
+        username: $username
+        password: $password
+      }
+    ) {
+      id
+      username
+    }
+  }
+`

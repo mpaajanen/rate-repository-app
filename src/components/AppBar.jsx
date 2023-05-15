@@ -48,6 +48,10 @@ const AppBar = () => {
         ? (<Pressable onPress={signOut}><Text style={styles.tab} color="tabText" fontWeight="bold">Sign-out</Text></Pressable>)
         : (<AppBarTab style={styles.tab} text="Sign-in" path="/signin" />)
         }
+        {data?.me 
+        ? null
+        : (<AppBarTab style={styles.tab} text="Sign-up" path="/signup" />)
+        }
         
       </ScrollView>
     </View>
