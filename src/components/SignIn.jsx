@@ -40,15 +40,32 @@ const SignIn = ({ onSubmit }) => {
   )
 };
 
+const initialValues = {
+  username: '',
+  password: ''
+};
+
+const validationSchema = yup.object().shape({
+  username: yup
+    .string()
+    .required('Username is required'),
+  password: yup
+    .string()
+    .required('Password is required')
+});
+
+export const SigninFormContainer = ({ onSubmit }) => {
+  return (
+    <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
+      {({ handleSubmit }) => <SignIn onSubmit={handleSubmit} />}
+    </Formik>
+  );
+}
+
 const SigninForm = () => {
   const [signIn] = useSignIn();
   const navigate = useNavigate();
 
-  const initialValues = {
-    username: '',
-    password: ''
-  };
-  
   const onSubmit = async (values) => {
     // console.log({values})
     const { username, password } = values;
@@ -63,22 +80,7 @@ const SigninForm = () => {
     }
   };
 
-  const validationSchema = yup.object().shape({
-    username: yup
-      .string()
-    // .min(3, "Length of Username must be greater or equal to 3"),
-    .required('Username is required'),
-    password: yup
-      .string()
-      // .min(3, "Length of Password must be greater or equal to 3")
-      .required('Password is required')
-  });
-  
-  return (
-    <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
-      {({ handleSubmit }) => <SignIn onSubmit={handleSubmit} />}
-    </Formik>
-  );
+  return <SigninFormContainer onSubmit={onSubmit} />
 };
 
 export default SigninForm;
