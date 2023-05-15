@@ -37,7 +37,7 @@ const countFormatter = count => {
 
 const RepositoryItem = ({item}) => {
   return (
-    <View style={styles.card}>
+    <View testID="repositoryItem" style={styles.card}>
       <View style={styles.rowdirection}>
         <View>
           <Image style={styles.avatar} source={{uri: item.ownerAvatarUrl}} />
