@@ -6,7 +6,7 @@ import AppBar from './AppBar';
 import RepositoryList from './RepositoryList';
 import theme from '../theme';
 import SigninForm from './SignIn';
-import RepositoryPage from './RepositoryPage';
+import RepositoryPageasdas from './RepositoryPage';
 
 const styles = StyleSheet.create({
   container: {
@@ -22,7 +22,7 @@ const Main = () => {
       <Pressable onPress={() => console.log('pressed..')}><AppBar /></Pressable>
       <Routes>
         <Route path="/" element={<RepositoryList />} exact />
-        <Route path="/repository/:id" element={<RepositoryPage />} exact />
+        <Route path="/repository/:id" element={<RepositoryPageasdas />} exact />
         <Route path="/signin" element={<SigninForm />} exact />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
