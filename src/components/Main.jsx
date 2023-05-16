@@ -9,6 +9,7 @@ import SigninForm from './SignIn';
 import SignupForm from './SignUp';
 import RepositoryPage from './RepositoryPage';
 import ReviewForm from './Review';
+import ReviewsList from './ReviewsList'
 import { Picker } from '@react-native-picker/picker';
 import { useState } from 'react';
 
@@ -52,6 +53,7 @@ const Main = () => {
         <Route path="/signin" element={<SigninForm />} exact />
         <Route path="/signup" element={<SignupForm />} exact />
         <Route path="/review" element={<ReviewForm />} exact />
+        <Route path="/myreviews" element={<ReviewsList />} exact />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </View>

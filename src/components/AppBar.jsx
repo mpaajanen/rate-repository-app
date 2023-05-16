@@ -45,6 +45,10 @@ const AppBar = () => {
         : null
         }
         {data?.me 
+        ? (<AppBarTab style={styles.tab} text="My reviews" path="/myreviews" />)
+        : null
+        }
+        {data?.me 
         ? (<Pressable onPress={signOut}><Text style={styles.tab} color="tabText" fontWeight="bold">Sign-out</Text></Pressable>)
         : (<AppBarTab style={styles.tab} text="Sign-in" path="/signin" />)
         }
